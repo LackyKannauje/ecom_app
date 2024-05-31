@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 FirebaseAuth _auth = FirebaseAuth.instance;
+
 TextEditingController emailController = TextEditingController();
 var isLogin = false;
 
@@ -145,6 +146,7 @@ class _ForgotPassState extends State<ForgotPass> {
                                 Navigator.pop(context);
                               },
                             );
+                            emailController.clear();
                           } on FirebaseAuthException catch (e) {
                             String message;
                             switch (e.code) {

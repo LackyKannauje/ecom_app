@@ -185,8 +185,8 @@ class _SignUpState extends State<SignUp> {
                               ),
                             );
 
-                            emailController.text = "";
-                            passController.text = "";
+                            emailController.clear();
+                            passController.clear();
                           } on FirebaseAuthException catch (e) {
                             String message;
                             switch (e.code) {

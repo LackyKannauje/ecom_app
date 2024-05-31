@@ -304,6 +304,9 @@ class _LoginPageState extends State<LoginPage> {
                                           "Failed to verify OTP: ${e.toString()}");
                                     }
                                   }
+                                  emailController.clear();
+                                  passController.clear();
+                                  otpController.clear();
                                 } on FirebaseAuthException catch (e) {
                                   String message;
                                   switch (e.code) {
