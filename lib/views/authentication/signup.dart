@@ -1,6 +1,7 @@
 import 'package:ecom/const/styles.dart';
 import 'package:ecom/views/authentication/login.dart';
 import 'package:ecom/views/authentication/phone.dart';
+import 'package:ecom/views/screens/bottom.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -175,6 +176,13 @@ class _SignUpState extends State<SignUp> {
                             await _auth.createUserWithEmailAndPassword(
                               email: emailController.text,
                               password: passController.text,
+                            );
+
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavBar(),
+                              ),
                             );
 
                             emailController.text = "";

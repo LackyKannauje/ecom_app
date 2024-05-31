@@ -274,6 +274,12 @@ class _LoginPageState extends State<LoginPage> {
                                       email: emailController.text,
                                       password: passController.text,
                                     );
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => BottomNavBar(),
+                                      ),
+                                    );
                                   } else {
                                     try {
                                       PhoneAuthCredential credential =
@@ -284,7 +290,8 @@ class _LoginPageState extends State<LoginPage> {
                                       await _auth
                                           .signInWithCredential(credential)
                                           .then(
-                                            (value) => Navigator.push(
+                                            (value) =>
+                                                Navigator.pushReplacement(
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>

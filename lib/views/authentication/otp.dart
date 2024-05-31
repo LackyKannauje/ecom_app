@@ -123,7 +123,7 @@ class _OtpPageState extends State<OtpPage> {
                               smsCode: otpController.text.toString(),
                             );
                             await _auth.signInWithCredential(credential).then(
-                                  (value) => Navigator.push(
+                                  (value) => Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => BottomNavBar(),
